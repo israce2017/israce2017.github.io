@@ -79,10 +79,12 @@
       <script type="text/javascript">
       $( document ).ready(function(){
         $('.carousel.carousel-slider').carousel({fullWidth: true});
+        $('.carousel').height(307);
         $(".button-collapse").sideNav();        
         autoplay()
         function autoplay() {
             $('.carousel').carousel('next');
+            $('.carousel').height(307);
             setTimeout(autoplay, 4000);
         }
       })
