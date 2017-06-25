@@ -1,0 +1,44 @@
+---
+layout: default
+---
+<h3 class="thin blue-text text-darken-3 center-align">Abstact Submission</h3>
+<br>
+<div class="row">
+<p>1. Download the abstract submission form.<br>2. Fill the details.<br>3. Rename the document as "<i>name</i>_<i>registration number</i>.docx" example: mosesinbaraj_1234.docx<br>4. Upload the document</p>
+</div>
+<div class="row">
+<p>Abstract Submission Form: <a class="waves-effect waves-light btn-flat" href="/abstract_submission_form.docx">Download</a>
+</p>
+</div>
+<div class="row">
+<p>Sample Abstract: <a class="waves-effect waves-light btn-flat" href="/sample_abstract.pdf">Download</a></p>
+</div>
+<div id="uploaddiv">
+<h4 class="thin blue-text text-darken-3 center-align">Upload Abstract</h4>
+<div class="row">
+  <form name="uploadabstract" id="uploadabstract" class="col s12">
+    <div class="row">
+      <div class="input-field col s3">
+        <input id="reg_no" type="number" class="validate" required>
+        <label for="reg_no">Registraion Number</label>
+      </div>
+      <div class="file-field input-field col s9">
+        <div class="btn">
+          <span>Choose file</span>
+          <input id="your_abstract" type="file" required>
+        </div>
+        <div class="file-path-wrapper">
+          <input id="filenameda" class="file-path validate" type="text">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <center>
+        <button class="btn-large waves-effect waves-light" type="submit" name="action">Submit
+          <i class="material-icons right">send</i>
+        </button>
+      </center>
+    </div>
+  </form>
+</div>
+</div>
