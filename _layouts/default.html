@@ -55,6 +55,17 @@
                 <li><a href="abstract.html">Abstract Submission</a></li>
                 <li><a href="satellite.html">Satellite Events</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li>
+                  <br><br>
+                  <div class="card">
+
+                    <div id="takelow" class="card-image waves-effect waves-block waves-light">
+                      <img src="chennai.jpg">
+                      <span style="padding-bottom:0px" class="card-title yellow-text">Explore Chennai</span>
+                    </div>
+
+                  </div>
+                </li>
               </ul>
             </div>
           </div>
@@ -79,6 +90,11 @@
       <script type="text/javascript" src="https://npmcdn.com/parse@1.9.2/dist/parse.js"></script>
       <script type="text/javascript">
       $( document ).ready(function(){
+        $("#takelow").click(function () {
+          window.location="http://www.indtravel.com/chennai/chennai.html";
+        });
+
+
         $('select').material_select();
         $("#parseloader").hide();
         //var Parse = require('parse');
@@ -792,10 +808,10 @@
               alert("Error: " + error.code + " " + error.message);
             }
           })
-        })
+        });
 
 
-      })
+      });
       </script>
     </body>
   </html>
