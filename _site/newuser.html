@@ -290,9 +290,18 @@
                         {
                           entry.set("altemail",altemail);
                         }
-                        entry.set("institution",affinstitution);
-                        entry.set("address",address);
-                        entry.set("country",country);
+                        if(affinstitution)
+                        {
+                          entry.set("institution",affinstitution);
+                        }
+                        if(address)
+                        {
+                          entry.set("address",address);
+                        }
+                        if(country)
+                        {
+                          entry.set("country",country);
+                        }
                         if(phone)
                         {
                           entry.set("phone",phone);
@@ -301,8 +310,14 @@
                         {
                           entry.set("passport",passport);
                         }
-                        entry.set("scientificsession",scientific);
-                        entry.set("presentationtype",presentation);
+                        if(scientific)
+                        {
+                          entry.set("scientificsession",scientific);
+                        }
+                        if(presentation)
+                        {
+                          entry.set("presentationtype",presentation);
+                        }
                         entry.set("regno",regno);
                         entry.save(null, {
                           success: function(entry) {
@@ -387,6 +402,7 @@
                           },
                           error: function(error) {
                             console.log("Error: " + error.code + " " + error.message);
+                            $("#newuserdiv").html('<br><br><h4 class="center-align"><b>Sorry, something went wrong.</b></h4>');
                           }
                         });
 
@@ -394,6 +410,7 @@
                     },
                     error: function(error) {
                       console.log("Error: " + error.code + " " + error.message);
+                      $("#newuserdiv").html('<br><br><h4 class="center-align"><b>Sorry, something went wrong.</b></h4>');
                     }
                   });
                 }
@@ -402,6 +419,7 @@
             },
             error: function(error) {
               console.log("Error: " + error.code + " " + error.message);
+              $("#newuserdiv").html('<br><br><h4 class="center-align"><b>Sorry, something went wrong.</b></h4>');
             }
           });
 
@@ -909,11 +927,13 @@
                         error: function(data) {
                           console.log('error in updating file');
                           console.log(data);
+                          $("#uploaddiv").html('<h4 class="center-align">Sorry, something went wrong.</h4>');
                         }
                       });
                     }, function(error){
                       console.log('file upload error');
                       console.log(error);
+                      $("#uploaddiv").html('<h4 class="center-align">Sorry, something went wrong.</h4>');
                     });
                   }
                 }
@@ -927,7 +947,7 @@
               }
             },
             error: function(error) {
-              alert("Error: " + error.code + " " + error.message);
+              $("#uploaddiv").html('<h4 class="center-align">Sorry, something went wrong.</h4>');
             }
           })
         });
