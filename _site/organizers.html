@@ -132,6 +132,14 @@
       <script type="text/javascript" src="https://npmcdn.com/parse@1.9.2/dist/parse.js"></script>
       <script type="text/javascript">
       $( document ).ready(function(){
+        $("#indian").click(function() {
+          // console.log('wowow');
+          $("#paymatter").html('<br><a target="_blank" href="https://www.onlinesbi.com/prelogin/icollecthome.htm?corpID=351953">Click here for payment - Indian Delegates</a>');
+        });
+        $("#foreign").click(function() {
+          // console.log('wowow fasjfoajs');
+          $("#paymatter").html('<br><b>Registration details for Abroad delegates</b><table class="highlight"><tbody><tr><td>Name of the Beneficiary</td> <td>Madras Christian College Association</td></tr><tr><td>Address of the Beneficiary</td> <td>Madras Christian College, East Tambaram, Chennai 600059, India</td></tr><tr><td>Bank Account Number</td> <td>019101000042770</td></tr><tr><td>Nature of Bank Account</td> <td>Savings Account</td></tr><tr><td>Name of Bank</td> <td>Indian Overseas Bank</td></tr><tr><td>Address of Bank:</td> <td>IOB, Madras Christian College Campus Branch, East Tambaram, Chennai 600059, India</td></tr><tr><td>City, State and Zip Code</td> <td>Tambaram, Chennai - 600059<br>Tamil Nadu, India</td></tr><tr><td>Country</td> <td>India</td></tr><tr><td>RTGS Enabled, IFSC code (bank code)</td><td>IOB A0000191</td></tr><tr><td>SWIFT Code</td> <td>IOBAINBB001</td></tr><tr><td>Purpose</td><td>Endocrinology Symposium Registration</td></tr></tbody></table>');
+        });
         $("#takelow").click(function () {
           window.location="http://www.indtravel.com/chennai/chennai.html";
         });
@@ -166,6 +174,7 @@
           var passport = $("#passport_number").val();
           var scientific = $("#scientific").val();
           var presentation = $("#presentation").val();
+          var transactionid = $("#txn_id").val();
           // var name = $("#filenameda").val();
           $("#newuserdiv").html('<p class="center-align">We are uploading your details, please wait.</p><div class="progress"><div class="indeterminate"></div></div>');
 
@@ -238,6 +247,10 @@
                         {
                           entry.set("presentationtype",presentation);
                         }
+                        if(transactionid)
+                        {
+                          entry.set("transactionid",transactionid);
+                        }
                         entry.set("regno",regno);
                         entry.save(null, {
                           success: function(entry) {
@@ -255,7 +268,7 @@
                                 data: {
                                     "key": "xSOd2emthJ0aDh7eRdDm4g",
                                     "message": {
-                                      "html": "<p>Hi Moses,<br><br>New registration was made<br><br>Registration Details:<br>Unique Registration Number: "+String(regno)+"<br>Name: "+String(yname)+"<br>Email: "+String(yemail)+"<br>Alternate Email: "+String(altemail)+"<br>Affiliated Institution: "+String(affinstitution)+"<br>Address: "+String(address)+"<br>Country: "+String(country)+"<br>Phone: "+String(phone)+"<br>Passport Number: "+String(passport)+"<br>Scientific Session: "+String(scientific)+"<br>Presentation Type: "+String(presentation)+"</p>",
+                                      "html": "<p>Hi Moses,<br><br>New registration was made<br><br>Registration Details:<br>Unique Registration Number: "+String(regno)+"<br>Name: "+String(yname)+"<br>Email: "+String(yemail)+"<br>Alternate Email: "+String(altemail)+"<br>Affiliated Institution: "+String(affinstitution)+"<br>Address: "+String(address)+"<br>Country: "+String(country)+"<br>Phone: "+String(phone)+"<br>Passport Number: "+String(passport)+"<br>Scientific Session: "+String(scientific)+"<br>Presentation Type: "+String(presentation)+"<br>Payment Transaction ID: "+String(transactionid)+"</p>",
                                       "subject": "New registration submitted ISRACE 2017",
                                       "from_email": "admin@israce2017.org",
                                       "from_name": "Super man",
@@ -290,7 +303,7 @@
                                         data: {
                                             "key": "xSOd2emthJ0aDh7eRdDm4g",
                                             "message": {
-                                              "html": "<p>Hi "+String(yname)+",<br><br>Thankyou for registering your participation in ISRACE2017.<br>We have received your registration details for ISRACE2017. Kindly note down the registration number for uploading the abstract.<br>Abstract submission link: <a href='http://israce2017.org/abstract.html'>israce2017.org/abstract.html</a><br><br>Registration Details:<br>Unique Registration Number: "+String(regno)+"<br>Name: "+String(yname)+"<br>Email: "+String(yemail)+"<br>Alternate Email: "+String(altemail)+"<br>Affiliated Institution: "+String(affinstitution)+"<br>Address: "+String(address)+"<br>Country: "+String(country)+"<br>Phone: "+String(phone)+"<br>Passport Number: "+String(passport)+"<br>Scientific Session: "+String(scientific)+"<br>Presentation Type: "+String(presentation)+"<br><br>We welcome you to the International Symposium<br><br>Organizing Secretary - ISRACE2017</p>",
+                                              "html": "<p>Hi "+String(yname)+",<br><br>Thankyou for registering your participation in ISRACE2017.<br>We have received your registration details for ISRACE2017. Kindly note down the registration number for uploading the abstract.<br>Abstract submission link: <a href='http://israce2017.org/abstract.html'>israce2017.org/abstract.html</a><br><br>Registration Details:<br>Unique Registration Number: "+String(regno)+"<br>Name: "+String(yname)+"<br>Email: "+String(yemail)+"<br>Alternate Email: "+String(altemail)+"<br>Affiliated Institution: "+String(affinstitution)+"<br>Address: "+String(address)+"<br>Country: "+String(country)+"<br>Phone: "+String(phone)+"<br>Passport Number: "+String(passport)+"<br>Scientific Session: "+String(scientific)+"<br>Presentation Type: "+String(presentation)+"<br>Payment Transaction ID: "+String(transactionid)+"<br><br>We welcome you to the International Symposium<br><br>Organizing Secretary - ISRACE2017</p>",
                                               "subject": "Registration details for ISRACE 2017",
                                               "from_email": "admin@israce2017.org",
                                               "from_name": "Admin israce2017",

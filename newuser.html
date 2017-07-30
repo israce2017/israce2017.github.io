@@ -113,6 +113,26 @@ layout: default
           <label>Type of presentation</label>
         </div>
       </div>
+      <h5>Payment Details</h5>
+      <br>
+      <div class="row">
+        <!-- <div class="input-field col s6"> -->
+          &nbsp;<input class="with-gap" name="group1" type="radio" id="indian"  />
+          <label for="indian">Indian Delegate</label>
+        <!-- </div> -->
+        <!-- <div class="input-field col s6"> -->
+          &nbsp;&nbsp;&nbsp;&nbsp;<input class="with-gap" name="group1" type="radio" id="foreign"  />
+          <label for="foreign">Foreign Delegate</label>
+        <!-- </div> -->
+        <div id="paymatter" style="padding: 0 .75rem;"></div>
+      </div>
+      <p>The registration fee can be paid through the above respective payment links for Indian and Foreign delegates from your bank account or through any payment card. After the payment, kindly fill the transaction ID below</p>
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="txn_id" type="text" class="validate">
+          <label for="txn_id">Transaction ID</label>
+        </div>
+      </div>
       <div class="row">
         <center>
           <button class="btn-large waves-effect waves-light" type="submit" name="action">Submit
