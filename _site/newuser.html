@@ -26,6 +26,10 @@
       .carousel .carousel-item {
         width:550px !important;
       }
+      #announce {
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
 
       </style>
 
@@ -33,6 +37,8 @@
 
     <body>
       <header>
+            <div id="announce" class="container center-align">Last date for registration extended to <font color="#b71c1c">15th&nbsp;September&nbsp;2017</font></div>
+
         <nav>
           <div class="nav-wrapper blue darken-3">
             <div class="container">
@@ -153,7 +159,8 @@
       </div>
       <div class="row">
         <div class="input-field col s6">
-          <select id="scientific" required="required" name="hola">
+          <select id="scientific" name="hola">
+            <option value="" disabled selected>Choose your option</option>
             <option value="Neuroendocrinology">Neuroendocrinology</option>
             <option value="Hormonal Regulation of Reproduction">Hormonal Regulation of Reproduction</option>
             <option value="Endocrine Control of Metabolism">Endocrine Control of Metabolism</option>
@@ -187,6 +194,7 @@
             <option value="oral">Oral</option>
             <option value="invited speaker">Invited speaker</option>
             <option value="poster">Poster</option>
+            <option value="none">None/Participation only</option>
           </select>
           <label>Type of presentation</label>
         </div>
