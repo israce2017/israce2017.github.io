@@ -31,7 +31,14 @@
         margin-top: 5px;
         margin-bottom: 5px;
       }
-
+      #map {
+       height: 400px;
+       width: 100%;
+      }
+      #map_st {
+       height: 400px;
+       width: 100%;
+      }
       </style>
 
     </head>
@@ -63,7 +70,7 @@
                 <!-- <li><a href="#">Accomodation</a></li> -->
                 <li><a href="abstract.html">Abstract Submission</a></li>
                 <li><a href="satellite.html">Satellite Events</a></li>
-                <li><a href="tentpgmschedule.html">Tentative Schedule</a></li>
+                <!-- <li><a href="tentpgmschedule.html">Tentative Schedule</a></li> -->
                 <li><a href="contact.html">Contact</a></li>
                 <li>
                   <br><br>
@@ -125,11 +132,211 @@ Poster Presentation: The poster size should be of the dimension 3ft width x 4ft 
 <p>With wishes</p>
 <p><b>R.Moses Inbaraj<br>
 Organising Secretary -  ISRACE 2017.</b><br>
-Email : <a href="mailto:israce2017@gmail.com">israce2017@gmail.com</a></p>
+Email : <a href="mailto:israce2017@gmail.com">israce2017@gmail.com</a><br>
+Madras Christian College Tambaram, Chennai 600059, India<br>
+Ph: <a href="tel:+91-9444442362">+91-9444442362</a> (mobile) </p>
+<h5>From Airport</h5>
+<p><a href="https://www.google.com/maps/dir/?api=1&origin=Chennai+International+Airport&destination=Madras+Christian+College+Tambaram&travelmode=driving" target="_blank">View in Google maps</a></p>
+<div id="map"></div>
+<br>
+<h5>From Railway station</h5>
+<p><a href="https://www.google.com/maps/dir/?api=1&origin=Chennai+Central+station&destination=Madras+Christian+College+Tambaram&travelmode=transit" target="_blank">View in Google maps</a></p>
+<div id="map_st"></div>
+<script>
+function initMap() {
+        var directionsService = new google.maps.DirectionsService;
+        var directionsDisplay = new google.maps.DirectionsRenderer;
+        var directionsService_st = new google.maps.DirectionsService;
+        var directionsDisplay_st = new google.maps.DirectionsRenderer;
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 13,
+          center: {lat: 12.9205697, lng: 80.1221587}
+        });
+        var mapst = new google.maps.Map(document.getElementById('map_st'), {
+          zoom: 13,
+          center: {lat: 12.9205697, lng: 80.1221587}
+        });
+        directionsDisplay.setMap(map);
+        directionsDisplay_st.setMap(mapst);
+        calculateAndDisplayRoute(directionsService, directionsDisplay);
+        calculateAndDisplayRoute_st(directionsService_st, directionsDisplay_st);
+      }
+
+      function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+
+        directionsService.route({
+          origin: "Chennai International Airport",
+          destination: "Madras Christian College, Tambaram",
+          optimizeWaypoints: true,
+          travelMode: 'DRIVING'
+        }, function(response, status) {
+          if (status === 'OK') {
+            directionsDisplay.setDirections(response);
+
+          } else {
+            window.alert('Directions request failed due to ' + status);
+          }
+        });
+      }
+      function calculateAndDisplayRoute_st(directionsService_st, directionsDisplay_st) {
+
+        directionsService_st.route({
+          origin: "Chennai Central",
+          destination: "Madras Christian College, Tambaram",
+          optimizeWaypoints: true,
+          travelMode: 'DRIVING'
+        }, function(response, status) {
+          if (status === 'OK') {
+            directionsDisplay_st.setDirections(response);
+
+          } else {
+            window.alert('Directions request failed due to ' + status);
+          }
+        });
+      }
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQfsppvISgx3wCcM05dDoblHCWHPPCdt4&callback=initMap">
+</script>
 
             <br>
         </div>
       </main>
+      <footer class="page-footer blue darken-3">
+          <div class="container center-align">
+            <div class="row">
+              <div class="col s12">
+                <h5 class="white-text">Speakers</h5>
+                <div id="speakerslist" class="carousel carousel-slider center">
+                  <div class="carousel-item white-text" style="width:100% !important" href="#one!">
+                      <table>
+                        <tbody>
+                          <tr>
+                            <td class="center-align">Prof. Ishwar Parhar, Monash University, Malaysia</td>
+                            <td class="center-align">Prof. Adelino Canario, University of Algarve, Portugal</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                  </div>
+                  <div class="carousel-item white-text" style="width:100% !important" href="#two!">
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td class="center-align">Prof. Keerikkattil Paily Joy, Cochin</td>
+                          <td class="center-align">Dr. P.S. Singru, NISER, Orissa</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="carousel-item white-text" style="width:100% !important" href="#three!">
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td class="center-align">Prof. Umesh Rai, University of Delhi, India</td>
+                          <td class="center-align">Prof. Suraj Unniappan, University of Saskatchewan, Canada</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="carousel-item white-text" style="width:100% !important" href="#four!">
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td class="center-align">Prof. Wei Ge, University of Macau, China</td>
+                          <td class="center-align">Prof. Veerle Darras, KU Leuven, Belgium</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="carousel-item white-text" style="width:100% !important" href="#five!">
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td class="center-align">Prof. Hamid Habibi, University of Calgary, Canada</td>
+                          <td class="center-align">Dr. M. Balasubramanyam, Diabetic Research Centre, Chennai</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="carousel-item white-text" style="width:100% !important" href="#six!">
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td class="center-align">Prof. G. Archunan, Barathidasan University, Trichy, India</td>
+                          <td class="center-align">Dr. Chellakkan S. Blesson, Baylor College of Medicine, Texas, USA</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="carousel-item white-text" style="width:100% !important" href="#seven!">
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td class="center-align">Dr. Mohapatra sipra, Kyushu University, Japan</td>
+                          <td class="center-align">Dr. Jithendran Sundaray, CIFA, Bhuvaneshwar</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="carousel-item white-text" style="width:100% !important" href="#eight!">
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td class="center-align">Dr. Radha Chaube, BHU, Varanasi</td>
+                          <td class="center-align">Prof. Dilip Mukherjee, Kalyani University, West Bengal</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="carousel-item white-text" style="width:100% !important" href="#nine!">
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td class="center-align">Prof. Subash Peter, University of Kerala, Trivandrum</td>
+                          <td class="center-align">Prof. Sudipta Maitra, Santiniketan, West Bengal</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="carousel-item white-text" style="width:100% !important" href="#ten!">
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td class="center-align">Dr. Ravishankar, IBMS,  Taramani, Chennai</td>
+                          <td class="center-align">Dr. Yuvraj, IBMS, Tarama, Chennai</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="carousel-item white-text" style="width:100% !important" href="#eleven!">
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td class="center-align">Dr. Michał Dzięcioł, Wroclaw University of Environmental and Life Sciences, Poland</td>
+                          <td class="center-align">Dr. Winkin Santosh, Nandanam College of Arts & Science, Chennai</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="carousel-item white-text" style="width:100% !important" href="#twelve!">
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td class="center-align">Prof. Balamurgan Krishnaswami, Alagappa University, Karaikudi</td>
+                          <td class="center-align">Dr. Pankaj Kumar, Rajiv Gandhi University, Itanagar</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            ISRACE 2017
+            </div>
+          </div>
+        </footer>
       <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <!-- Compiled and minified JavaScript -->
@@ -156,14 +363,18 @@ Email : <a href="mailto:israce2017@gmail.com">israce2017@gmail.com</a></p>
         Parse.initialize("Fdo6szLdxY1gndKElzfBljZoXvq1DRM84w8dwlvo", "JFvjUGB0TlqcH5moZf6TPWh8Z5l3SDpxT3i1mpk2");
         Parse.serverURL = 'https://parseapi.back4app.com';
         $('.carousel.carousel-slider').carousel({fullWidth: true});
-        $('.carousel').height(307);
+        // $('.carousel').height(307);
+        $('#homepics').height(307);
+        $('#speakerslist').height(50);
         $(".button-collapse").sideNav({
           menuWidth: 220
         });
         autoplay()
         function autoplay() {
             $('.carousel').carousel('next');
-            $('.carousel').height(307);
+            // $('.carousel').height(307);
+            $('#homepics').height(307);
+            $('#speakerslist').height(80);
             setTimeout(autoplay, 4000);
         }
         $('#newuser').submit(function(event){
